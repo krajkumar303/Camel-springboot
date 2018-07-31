@@ -9,19 +9,15 @@ public class BaseRestRouteBuilder extends RouteBuilder {
 
 	@Override
 	public void configure() throws Exception {
-		/*restConfiguration().component("{{component}}").port("{{port}}")
-		  .bindingMode(RestBindingMode.json)
-				.dataFormatProperty("prettyPrint", "true");	*/
 
-		restConfiguration()
-			.component("{{component}}").port("{{port}}")
+	restConfiguration()
+	    .component("{{component}}").port("{{port}}")
         		//.contextPath("/camel-sample")
-        		.apiContextPath("/api-doc")
+            .apiContextPath("/api-doc")
             .apiProperty("api.title", "Camel REST API")
             .apiProperty("api.version", "1.0")
             .apiProperty("cors", "true")
             .apiContextRouteId("doc-api")
-            .scheme("https").port("4431")
             .bindingMode(RestBindingMode.json)
             .dataFormatProperty("prettyPrint", "true")
             ;
